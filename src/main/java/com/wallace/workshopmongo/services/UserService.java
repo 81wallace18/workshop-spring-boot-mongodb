@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 
@@ -33,6 +34,12 @@ public class UserService {
 	@PutMapping
 	public User insert(User obj) {
 		return repository.insert(obj);
+	}
+	
+	@DeleteMapping
+	public void delete(String id) {
+		findById(id);
+		repository.deleteById(id);
 	}
 	
 	public User fromDTO(UserDTO objDTO) {
