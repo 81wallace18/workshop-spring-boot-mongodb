@@ -2,8 +2,8 @@ package com.wallace.workshopmongo.repository;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 
-import com.wallace.workshopmongo.domain.User;
+import com.wallace.workshopmongo.domain.Post;
 
-public interface UserRepository extends MongoRepository<User, String>{
+public interface PostRepository extends MongoRepository<Post, String>{
 	
 }
